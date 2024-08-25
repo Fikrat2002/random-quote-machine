@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color:  #fff;
+  transition: color 0.3s;
+}
+
+h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.quote-content {
+  padding: 0 15px;
+}
+
+.author {
+  text-align: end;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color:  #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-position {
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.twitter-share {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.twitter-share-button {
+  background: #1da1f2;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  box-shadow: 2px 4px 8px rgba(65, 63, 63, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.twitter-share-button:hover {
+  background-color: #1991db;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .twitter-share-button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .twitter-share-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
