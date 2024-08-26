@@ -38,7 +38,7 @@ function Quote() {
   const getButtonColor = (bgColor) => {
     const [r, g, b] = [0, 2, 4].map((i) => Math.min(
       255,
-      parseInt(bgColor.slice(i + 1, i + 3), 16) + 50
+      parseInt(bgColor.slice(i + 1, i + 3), 16) + 50,
     ));
     return `#${[r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')}`;
   };
