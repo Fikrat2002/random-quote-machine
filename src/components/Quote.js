@@ -36,7 +36,8 @@ function Quote() {
   };
 
   const getButtonColor = (bgColor) => {
-    const [r, g, b] = [0, 2, 4].map((i) => Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50),);
+    const [r, g, b] = [0, 2, 4].map((i) => 
+    Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50),);
     return `#${[r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')}`;
   };
 
@@ -60,7 +61,7 @@ function Quote() {
 
   const shareOnTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `"${quote.text}" — ${quote.author}`
+      `"${quote.text}" — ${quote.author}`,
     )}`;
     window.open(twitterUrl, '_blank');
   };
@@ -71,7 +72,7 @@ function Quote() {
         <h1 style={{ color: textColor }}>Quote of the Day</h1>
         {error ? (
           <p className="error" style={{ color: textColor }}>
-            Error: 
+            Error:
             {error}
           </p>
         ) : (
@@ -86,7 +87,7 @@ function Quote() {
               ”
             </p>
             <p className="author" style={{ color: textColor }}>
-              --- 
+              ---
               {quote.author}
             </p>
           </>
