@@ -6,7 +6,7 @@ A simple React application that fetches random quotes and displays them to the u
 
 - Explore the project in action:
 
-(#<img width="960" alt="Screenshot 2024-06-28 103959" src="https://github.com/Fikrat2002/palindrome-checker/assets/168417613/95cee6ca-bcd6-4a95-bc70-e2391894c1bb">>
+(#<<img width="947" alt="Screenshot 2024-08-26 000048" src="https://github.com/user-attachments/assets/11ed41b3-ecdc-4b79-950d-e7f190ce140b">>
 )
 
 ## Live Deployment
@@ -36,7 +36,7 @@ Check out the live version here:
 
 ## Steps 📥
 1. Clone the Repository:
-- git@github.com:Fikrat2002first-react-project.git
+- git@github.com:Fikrat2002/random-quote-machine.git
 
 2. Install Dependencies:
 - npm install
