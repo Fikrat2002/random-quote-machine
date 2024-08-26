@@ -1,4 +1,5 @@
 import Quote from './components/Quote';
+
 import './App.css';
 function App() {
   return (
@@ -9,4 +10,3 @@ function App() {
 }
 
 export default App;
-
