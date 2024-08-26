@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, } from 'react';
+import React from 'react'; // Removed unused imports
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
