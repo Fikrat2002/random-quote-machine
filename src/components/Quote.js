@@ -30,14 +30,18 @@ function Quote() {
   }, [fetchQuote]);
 
   const getContrastingColor = (hex) => {
-    const [r, g, b] = [0, 2, 4].map(i => parseInt(hex.slice(i + 1, i + 3), 16));
+    const [r, g, b] = [0, 2, 4].map((i) => 
+      parseInt(hex.slice(i + 1, i + 3), 16)
+    );
     const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
     return luminance > 127.5 ? '#000000' : '#ffffff';
   };
 
   const getButtonColor = (bgColor) => {
-    const [r, g, b] = [0, 2, 4].map(i => Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50));
-    return `#${[r, g, b].map(c => c.toString(16).padStart(2, '0')).join('')}`;
+    const [r, g, b] = [0, 2, 4].map((i) => 
+      Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50)
+    );
+    return `#${[r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')}`;
   };
 
   const changeColors = () => {
@@ -66,16 +70,24 @@ function Quote() {
       <div className="container">
         <h1 style={{ color: textColor }}>Quote of the Day</h1>
         {error ? (
-          <p className="error" style={{ color: textColor }}>Error: {error}</p>
+          <p className="error" style={{ color: textColor }}>
+            Error: 
+            {error}
+          </p>
         ) : (
           <>
             <i className="fa-solid fa-quote-left" style={{ color: textColor }} />
-            <p className="quote-content" style={{ color: textColor }}>“{quote.quote}”</p>
-            <p className="author" style={{ color: textColor }}>--- {quote.author}</p>
+            <p className="quote-content" style={{ color: textColor }}>
+              “{quote.quote}”
+            </p>
+            <p className="author" style={{ color: textColor }}>
+              --- {quote.author}
+            </p>
           </>
         )}
         <div className="button-position">
           <button 
+            type="button"
             onClick={changeColorsAndQuote} 
             style={{ backgroundColor: btnColor, color: textColor }}
           >
@@ -84,6 +96,8 @@ function Quote() {
         </div>
         <div className="twitter-share">
           <button 
+            type="button"
+            aria-label="Share on Twitter"
             onClick={shareOnTwitter} 
             className="twitter-share-button" 
             style={{ backgroundColor: btnColor }}
