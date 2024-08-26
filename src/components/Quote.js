@@ -36,12 +36,8 @@ function Quote() {
   };
 
   const getButtonColor = (bgColor) => {
-    const [r, g, b] = [0, 2, 4].map((i) =>
-      Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50)
-    );
-    return `#${[r, g, b]
-      .map((c) => c.toString(16).padStart(2, '0'))
-      .join('')}`;
+    const [r, g, b] = [0, 2, 4].map((i) => Math.min(255, parseInt(bgColor.slice(i + 1, i + 3), 16) + 50),);
+    return `#${[r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')}`;
   };
 
   const changeColors = () => {
@@ -75,7 +71,8 @@ function Quote() {
         <h1 style={{ color: textColor }}>Quote of the Day</h1>
         {error ? (
           <p className="error" style={{ color: textColor }}>
-            Error: {error}
+            Error: 
+            {error}
           </p>
         ) : (
           <>
@@ -84,10 +81,13 @@ function Quote() {
               style={{ color: textColor }}
             />
             <p className="quote-content" style={{ color: textColor }}>
-              “{quote.quote}”
+              “
+              {quote.quote}
+              ”
             </p>
             <p className="author" style={{ color: textColor }}>
-              --- {quote.author}
+              --- 
+              {quote.author}
             </p>
           </>
         )}
@@ -117,4 +117,3 @@ function Quote() {
 }
 
 export default Quote;
-
