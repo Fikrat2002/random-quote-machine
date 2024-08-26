@@ -8,18 +8,15 @@ function Quote() {
   const [btnColor, setBtnColor] = useState('#3498db');
 
   const fetchQuote = useCallback(async () => {
-    const api =
-      'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
+    const api = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
     try {
       const res = await fetch(api);
       if (!res.ok) throw new Error('Network response was not ok');
       const results = await res.json();
       if (results.quotes && results.quotes.length > 0) {
-        const randomIndex = Math.floor(
-          Math.random() * results.quotes.length
-        );
+        const randomIndex = Math.floor(Math.random() * results.quotes.length);
         setQuote(results.quotes[randomIndex]);
-        setError(null); 
+        setError(null);
       } else {
         throw new Error('No quotes found in the response.');
       }
@@ -33,9 +30,7 @@ function Quote() {
   }, [fetchQuote]);
 
   const getContrastingColor = (hex) => {
-    const [r, g, b] = [0, 2, 4].map((i) =>
-      parseInt(hex.slice(i + 1, i + 3), 16)
-    );
+    const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i + 1, i + 3), 16));
     const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
     return luminance > 127.5 ? '#000000' : '#ffffff';
   };
@@ -50,9 +45,7 @@ function Quote() {
   };
 
   const changeColors = () => {
-    const newColor = `#${Math.floor(
-      Math.random() * 16777215
-    )
+    const newColor = `#${Math.floor(Math.random() * 16777215)
       .toString(16)
       .padStart(6, '0')}`;
     setBgColor(newColor);
@@ -62,7 +55,7 @@ function Quote() {
 
   const changeColorsAndQuote = async () => {
     try {
-      await fetchQuote(); 
+      await fetchQuote();
       changeColors();
     } catch (error) {
       setError('Failed to fetch a new quote.');
@@ -124,3 +117,4 @@ function Quote() {
 }
 
 export default Quote;
+

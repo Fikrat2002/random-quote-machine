@@ -1,4 +1,3 @@
-/* Reset and Basic Styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Main App Container */
 .app {
   height: 100vh;
   width: 100vw;
@@ -34,7 +32,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: #fff;
   transition: all 0.3s ease;
 }
 
@@ -43,12 +41,11 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Title and Text */
 h1 {
   font-size: 1.8rem;
   text-align: center;
   font-weight: 600;
-  color: #333333;
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -56,7 +53,7 @@ p {
   font-weight: 300;
   font-size: 1rem;
   text-align: center;
-  color: #666666;
+  color: #666;
   margin: 10px 0;
 }
 
@@ -67,18 +64,17 @@ p {
 .author {
   text-align: right;
   font-weight: 500;
-  color: #444444;
+  color: #444;
   margin-top: 10px;
 }
 
-/* Button Styles */
 button {
   font-size: 1rem;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
   background-color: #ff5e57;
-  color: #ffffff;
+  color: #fff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -93,7 +89,6 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Twitter Share Button */
 .twitter-share {
   display: flex;
   justify-content: center;
@@ -123,7 +118,6 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .container {
     padding: 15px;
