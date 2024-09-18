@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.container {
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: center;
+  color: #666;
+  margin: 10px 0;
+}
+
+.quote-content {
+  padding: 0 20px;
+}
+
+.author {
+  text-align: right;
+  font-weight: 500;
+  color: #444;
+  margin-top: 10px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5e57;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-position {
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff3b30;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.twitter-share {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.twitter-share-button {
+  background: #1da1f2;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  outline: none;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.twitter-share-button:hover {
+  background-color: #1991db;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    max-width: 450px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .twitter-share-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .twitter-share-button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
