@@ -4,7 +4,7 @@ function Quote() {
   const [quote, setQuote] = useState({ text: '', author: '' });
   const [error, setError] = useState(null);
   const [bgColor, setBgColor] = useState('#ffffff');
-  const [textColor, setTextColor] = useState('#000000');
+  const [textColor] = useState('#000000');
   const [btnColor, setBtnColor] = useState('#3498db');
 
   const fetchQuote = useCallback(async () => {
@@ -29,12 +29,6 @@ function Quote() {
     fetchQuote();
   }, [fetchQuote]);
 
-  const getContrastingColor = (hex) => {
-    const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i + 1, i + 3), 16));
-    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    return luminance > 127.5 ? '#000000' : '#ffffff';
-  };
-
   const getButtonColor = (bgColor) => {
     const [r, g, b] = [0, 2, 4].map((i) => Math.min(
       255,
@@ -44,11 +38,8 @@ function Quote() {
   };
 
   const changeColors = () => {
-    const newColor = `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, '0')}`;
+    const newColor = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
     setBgColor(newColor);
-    setTextColor(getContrastingColor(newColor));
     setBtnColor(getButtonColor(newColor));
   };
 
@@ -63,60 +54,56 @@ function Quote() {
 
   const shareOnTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `"${quote.text}" — ${quote.author}`,
+      `"${quote.quote}" — ${quote.author}`
     )}`;
     window.open(twitterUrl, '_blank');
   };
 
   return (
     <div className="app" style={{ backgroundColor: bgColor }}>
-      <div className="container">
-        <h1 style={{ color: textColor }}>Quote of the Day</h1>
+      <div id="quote-box" className="quote-box" style={{ color: textColor }}>
+        <h1>Quote of the Day</h1>
         {error ? (
           <p className="error" style={{ color: textColor }}>
-            Error:
-            {error}
+            Error: {error}
           </p>
         ) : (
           <>
-            <i
-              className="fa-solid fa-quote-left"
-              style={{ color: textColor }}
-            />
-            <p className="quote-content" style={{ color: textColor }}>
-              “
-              {quote.quote}
-              ”
+            <i className="fa-solid fa-quote-left" style={{ color: textColor }} />
+            <p id="text" className="quote-content" style={{ color: textColor }}>
+              “{quote.quote}”
             </p>
-            <p className="author" style={{ color: textColor }}>
-              ---
-              {quote.author}
+            <p id="author" className="author" style={{ color: textColor }}>
+              --- {quote.author}
             </p>
           </>
         )}
-        <div className="button-position">
-          <button
-            type="button"
-            onClick={changeColorsAndQuote}
-            style={{ backgroundColor: btnColor, color: textColor }}
-          >
-            New Quote
-          </button>
-        </div>
-        <div className="twitter-share">
-          <button
-            type="button"
-            aria-label="Share on Twitter"
-            onClick={shareOnTwitter}
-            className="twitter-share-button"
-            style={{ backgroundColor: btnColor }}
-          >
-            <i className="fab fa-twitter" style={{ color: textColor }} />
-          </button>
-        </div>
+        <button
+          id="new-quote"
+          type="button"
+          onClick={changeColorsAndQuote}
+          className="new-quote-button"
+          style={{ backgroundColor: btnColor, color: textColor }}
+        >
+          New Quote
+        </button>
+        <a
+          id="tweet-quote"
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            `"${quote.text}" — ${quote.author}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="twitter-share"
+          
+        >
+          <i className="fab fa-twitter" style={{ color: textColor }} />
+        </a>
       </div>
     </div>
   );
 }
 
 export default Quote;
+
+
